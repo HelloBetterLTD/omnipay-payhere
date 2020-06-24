@@ -1,0 +1,34 @@
+{
+    "name": "silverstripers/omnipay-payhere",
+    "type": "library",
+    "version": "2.1.0",
+    "description": "AfterPay gateway for Omnipay payment processing library",
+    "keywords": [
+        "pay here",
+        "payhere",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "gateway"
+    ],
+    "homepage": "https://github.com/SilverStripers/omnipay-payhere",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Priyashantha HP",
+            "email": "priyashantha@silverstripers.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\PayHere\\" : "src/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "require": {
+        "omnipay/common": "~2.0"
+    }
+}
