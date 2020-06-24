@@ -6,9 +6,6 @@ use Omnipay\Common\AbstractGateway;
 
 class Gateway extends AbstractGateway
 {
-
-    public $countryCode = 'NZ';
-
     /**
      * @return string
      */
@@ -25,7 +22,7 @@ class Gateway extends AbstractGateway
         return array(
             'merchantId'     => '',
             'merchantSecret' => '',
-            'testMode'       => true,
+            'testMode'       => false,
         );
     }
 
@@ -61,5 +58,15 @@ class Gateway extends AbstractGateway
     public function setMerchantSecret($value)
     {
         return $this->setParameter('merchantSecret', $value);
+    }
+
+    public function purchase(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\PayHere\Message\PurchaseRequest', $parameters);
+    }
+
+    public function completePurchase(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\PayHere\Message\CompletePurchaseRequest', $parameters);
     }
 }
