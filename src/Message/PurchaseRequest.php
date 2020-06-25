@@ -15,15 +15,15 @@ class PurchaseRequest extends AbstractRequest
         $data['notify_url'] = $this->getNotifyUrl() ?: $this->getReturnUrl();
 
         $data['order_id'] = $this->getTransactionId();
-        $data['items'] = '';
+        $data['items'] = $this->getDescription();
         $data['currency'] = $this->getCurrency();
         $data['recurrence'] = $this->getRecurrence();
         $data['duration'] = $this->getDuration();
         $data['amount'] = $this->getAmount();
 
         $data['first_name'] = $this->getFirstName();
-        $data['last_name'] = $this->getFirstName();
-        $data['phone'] = $this->getFirstName();
+        $data['last_name'] = $this->getLastName();
+        $data['phone'] = $this->getPhoneNumber();
         $data['email'] = $this->getEmail();
         $data['address'] = '';
         $data['city'] = '';

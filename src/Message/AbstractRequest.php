@@ -102,6 +102,24 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
     /**
      * @return mixed
      */
+    public function getLastName()
+    {
+        return $this->getParameter('last_name');
+    }
+
+    /**
+     * @param mixed $value
+     * @return $this
+     * @throws \Omnipay\Common\Exception\RuntimeException
+     */
+    public function setLastName($value)
+    {
+        return $this->setParameter('last_name', $value);
+    }
+
+    /**
+     * @return mixed
+     */
     public function getEmail()
     {
         return $this->getParameter('email');
@@ -115,6 +133,24 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
     public function setEmail($value)
     {
         return $this->setParameter('email', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhoneNumber()
+    {
+        return $this->getParameter('phone');
+    }
+
+    /**
+     * @param mixed $value
+     * @return $this
+     * @throws \Omnipay\Common\Exception\RuntimeException
+     */
+    public function setPhoneNumber($value)
+    {
+        return $this->setParameter('phone', $value);
     }
 
     /**
